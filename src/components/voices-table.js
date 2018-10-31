@@ -39,9 +39,9 @@ class VoicesTable extends Component {
                     {
                         voices.map(voice => {
                             return (
-                                <TableRow>
+                                <TableRow key={voice.id}>
                                     <TableCell>
-                                        <audio src={voice.audio_url} controls></audio>
+                                        <audio src={voice.audio_url} controls />
                                     </TableCell>
                                     <TableCell>
                                         {voice.created_at}

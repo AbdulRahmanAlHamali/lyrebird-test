@@ -39,9 +39,9 @@ class UtterancesTable extends Component {
                     {
                         utterances.map(utterance => {
                             return (
-                                <TableRow>
+                                <TableRow key={utterance.id}>
                                     <TableCell>
-                                        <audio src={utterance.audio_url} controls></audio>
+                                        <audio src={utterance.audio_url} controls />
                                     </TableCell>
                                     <TableCell>
                                         {utterance.created_at}
