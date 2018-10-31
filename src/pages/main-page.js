@@ -17,7 +17,7 @@ class MainPage extends Component {
 
         url += 'response_type=token&';
         url += `client_id=${process.env.REACT_APP_CLIENT_ID}&`;
-        url += `redirect_uri=${encodeURIComponent('http://localhost:3000/authorize')}&`;
+        url += `redirect_uri=${encodeURIComponent(window.location.origin + '/authorize')}&`;
         url += 'scope=voice&';
         url += `state=${this.generateAndStoreState()}`;
 
