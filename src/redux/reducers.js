@@ -1,19 +1,27 @@
 import { combineReducers } from 'redux';
-import {SET_UTTERANCES, SET_VOICES} from "./actions";
+import {FETCH_STATUS, FETCH_VOICES} from "./actions";
 
-function voices(state = [], action) {
+function voices(state = {status: FETCH_STATUS.NOT_STARTED, voices: []}, action) {
     switch (action.type) {
-        case SET_VOICES:
-            return action.voices;
+        case FETCH_VOICES:
+            return {
+                ...state,
+                voices: action.voices,
+                status: action.status
+            };
         default:
             return state;
     }
 }
 
-function utterances(state = [], action) {
+function utterances(state = {status: FETCH_STATUS.NOT_STARTED, voices: []}, action) {
     switch (action.type) {
-        case SET_UTTERANCES:
-            return action.utterances;
+        case FETCH_VOICES:
+            return {
+                ...state,
+                utterances: action.utterances,
+                status: action.status
+            };
         default:
             return state;
     }
