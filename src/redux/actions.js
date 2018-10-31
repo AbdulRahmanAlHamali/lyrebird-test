@@ -11,18 +11,18 @@ export class FETCH_STATUS {
 
 export function fetchVoices() {
     return dispatch => {
-        dispatch({type: FETCH_VOICES, voices: [], status: FETCH_STATUS.FETCHING});
+        dispatch({type: FETCH_VOICES, entries: [], status: FETCH_STATUS.FETCHING});
         setTimeout(() => {
-            dispatch(FETCH_VOICES, [{name: 'voice1'}, {name: 'voice2'}], FETCH_STATUS.SUCCEEDED);
+            dispatch({type: FETCH_VOICES, entries: [{name: 'voice1'}, {name: 'voice2'}], status: FETCH_STATUS.SUCCEEDED});
         }, 1000);
     }
 }
 
-export function fetchUtterances(utterances, status) {
+export function fetchUtterances() {
     return dispatch => {
-        dispatch({type: FETCH_UTTERANCES, utterances: [], status: FETCH_STATUS.FETCHING});
+        dispatch({type: FETCH_UTTERANCES, entries: [], status: FETCH_STATUS.FETCHING});
         setTimeout(() => {
-            dispatch(FETCH_UTTERANCES, [{name: 'utterance1'}, {name: 'utterance2'}], FETCH_STATUS.SUCCEEDED);
+            dispatch({type: FETCH_UTTERANCES, entries: [{name: 'utterance1'}, {name: 'utterance2'}], status: FETCH_STATUS.SUCCEEDED});
         }, 1000);
     }
 }
@@ -30,4 +30,3 @@ export function fetchUtterances(utterances, status) {
 export function generateAvatar() {
     return {type: GENERATE_AVATAR};
 }
-
