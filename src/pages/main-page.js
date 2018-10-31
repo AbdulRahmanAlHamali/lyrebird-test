@@ -13,10 +13,10 @@ class MainPage extends Component {
     }
 
     redirectToAuthorizationView() {
-        let url = 'https://myvoice.lyrebird.ai/authorize?';
+        let url = `${process.env.REACT_APP_API_URL}/authorize?`;
 
         url += 'response_type=token&';
-        url += 'client_id=1CFr6XcOAzP1S4Bz61gmUm0oqN1&';
+        url += `client_id=${process.env.REACT_APP_CLIENT_ID}&`;
         url += `redirect_uri=${encodeURIComponent('http://localhost:3000/authorize')}&`;
         url += 'scope=voice&';
         url += `state=${this.generateAndStoreState()}`;
