@@ -6,7 +6,7 @@ function voices(state = {status: FETCH_STATUS.NOT_STARTED, entries: []}, action)
         case FETCH_VOICES:
             return {
                 ...state,
-                entries: action.entries,
+                entries: state.entries.concat(action.entries),
                 status: action.status
             };
         default:
@@ -19,7 +19,7 @@ function utterances(state = {status: FETCH_STATUS.NOT_STARTED, entries: []}, act
         case FETCH_UTTERANCES:
             return {
                 ...state,
-                entries: action.entries,
+                entries: state.entries.concat(action.entries),
                 status: action.status
             };
         default:

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import {connect} from "react-redux";
 import {FETCH_STATUS, fetchVoices} from "../redux/actions";
+import VoicesTable from "./voices-table";
 
 class Voices extends Component {
 
@@ -9,10 +10,10 @@ class Voices extends Component {
     }
 
     render() {
-        let content = this.props.status === FETCH_STATUS.FETCHING? 'LOADING' : JSON.stringify(this.props.voices);
+        let content = this.props.status === FETCH_STATUS.FETCHING? <h5>LOADING...</h5> : <VoicesTable voices={this.props.voices}/>;
 
         return (
-            <div>{content}</div>
+            content
         );
     }
 }
