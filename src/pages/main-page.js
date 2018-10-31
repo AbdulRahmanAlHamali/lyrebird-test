@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import MainView from "../components/main-view";
 
 class MainPage extends Component {
 
@@ -33,9 +34,7 @@ class MainPage extends Component {
 
     render() {
         return (
-            <div>
-                MAIN
-            </div>
+            <MainView/>
         )
     }
 }
